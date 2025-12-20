@@ -1,0 +1,42 @@
+[
+    {
+        "id":"01",
+        "module":"Workout at Home",
+        "videos":"15 videos",
+        "icon": "./assets/img/arrowIcon.png"
+        
+
+    },
+    {
+        "id":"02",
+        "module":"Stay Strong and Fit ",
+        "videos":"48 videos",
+        "icon": "./assets/img/arrowIcon.png"
+          
+
+    },
+    {
+        "id":"03",
+        "module":"High Intensity",
+        "videos":"25 videos",
+        "icon": "./assets/img/arrowIcon.png"
+          
+
+    },
+    {
+        "id":"04",
+        "module":"Simple Workout",
+        "videos":"35 videos",
+        "icon": "./assets/img/arrowIcon.png"
+          
+
+    },
+    {
+        "id":"05",
+        "module":"Burn Calories",
+        "videos":"35 videos",
+        "icon": "./assets/img/arrowIcon.png"
+          
+
+    }
+]

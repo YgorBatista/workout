@@ -1,0 +1,37 @@
+[
+   
+    {
+        "img": "./assets/img/image4.png" ,
+        "title": "Treadmill",
+        "description":"250 est calories"
+        
+        
+    },
+
+    {  
+        "img": "./assets/img/image7.png" ,
+        "title": "Stretching",
+        "description":"250 est calories"
+    },
+    {
+        "img": "./assets/img/image2.png" ,
+        "title": "Yoga",
+        "description":"250 est calories"
+    },
+    {
+        "img": "./assets/img/image12.png" ,
+        "title": "Running",
+        "description":"250 est calories"
+    },
+    {
+        "img": "./assets/img/image6.png" ,
+        "title": "Lifting",
+        "description":"250 est calories"
+    },
+    {
+        "img": "./assets/img/image13.png" ,
+        "title": "PushUp",
+        "description":"250 est calories"
+    }
+    
+]
