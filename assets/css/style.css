@@ -674,7 +674,7 @@ footer .media .media-icon:hover span {
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            background: #000;
+            background: #161616;
             padding: 16px;
 
             z-index: 999; /* 👈 menor que o header */
@@ -832,6 +832,7 @@ footer .media .media-icon:hover span {
         }
         .title-info {
             width: 50vw;
+            height: auto;
         }
 
         .list-item p {
@@ -852,6 +853,12 @@ footer .media .media-icon:hover span {
             height: auto;
             width: 4vw;
             margin-right: 2vw;
+        }
+        footer .contact .media {
+            height: 80px;
+        }
+        footer .contact .media span {
+            font-size: 10px;
         }
     }
 }
