@@ -43,12 +43,22 @@ header {
     padding: 20px;
     z-index: 222;
     width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.726); /* importante pra não ficar transparente */
+    backdrop-filter: blur(12px);
 }
 .header-logo {
+    z-index: 1000;
     font-size: 30px;
     font-weight: 700;
     cursor: pointer;
-    transition: letter-spacing ease-in-out 0.9s, scale ease-in-out 0.5s;
+    transition:
+        letter-spacing ease-in-out 0.9s,
+        scale ease-in-out 0.5s;
 }
 .header-logo:hover {
     letter-spacing: 10px;
@@ -77,8 +87,6 @@ header {
 }
 .menu-mobile {
     display: none;
-    flex-wrap: wrap;
-    max-height: 0;
 }
 .menu-mobile-icon {
     display: none;
@@ -570,10 +578,7 @@ footer .media .media-icon:hover span {
     .container {
         width: 600px;
     }
-    header {
-        z-index: 111;
-        position: static;
-    }
+
     .header-logo {
         font-size: 20px;
     }
@@ -649,8 +654,9 @@ footer .media .media-icon:hover span {
         header {
             margin-bottom: 6vh;
             background-color: rgb(0, 0, 0);
-            position: sticky;
-            z-index: 10;
+
+            top: 0;
+            z-index: 1000;
         }
         .header-logo {
             font-size: 5vw;
@@ -658,25 +664,24 @@ footer .media .media-icon:hover span {
         .menu-desk {
             display: none;
         }
-
         .menu-mobile {
-            margin-bottom: 4vh;
-            max-height: 0vh;
-            padding: 2vw;
-            overflow: hidden;
             position: absolute;
-            top: 170px;
-            z-index: 1;
-            margin-top: -11vh;
-            width: 90vw;
-            justify-content: space-evenly;
+            top: 100%; /* 👈 exatamente abaixo do header */
+            left: 0;
+            width: 100%;
+            transform: translateY(-100%); /* 👈 escondido atrás */
+            opacity: 0;
             display: flex;
+            justify-content: space-evenly;
             align-items: center;
+            background: #000;
+            padding: 16px;
+
+            z-index: 999; /* 👈 menor que o header */
         }
 
         .menu-show {
-            max-height: 5vh;
-            margin-top: -70px;
+            transform: translateY(0); /* 👈 desce */
             transition: ease-in-out 600ms;
             opacity: 1;
         }
