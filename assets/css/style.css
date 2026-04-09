@@ -6,6 +6,10 @@
     --text-secudary: #ffffff5d;
     --background: black;
     --background-button: #ffffff20;
+    --underweight: #4da3ff;
+    --normal: #25ab75;
+    --overweight: #ffe642;
+    --obese: #ff4d4f;
 }
 
 * {
@@ -28,7 +32,6 @@ body {
 }
 
 .container {
-    overflow: hidden;
     margin-left: 370px;
     margin-right: 370px;
     margin-top: 50px;
@@ -52,6 +55,8 @@ header {
     backdrop-filter: blur(12px);
 }
 .header-logo {
+    text-decoration: none;
+    color: var(--text-primary);
     z-index: 1000;
     font-size: 30px;
     font-weight: 700;
@@ -124,7 +129,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 290px;
+    width: 190px;
     height: 36px;
     border-radius: 50px;
     background: var(--background-button);
@@ -450,7 +455,7 @@ span {
 
 .hidden {
     opacity: 0;
-    transition: all 800ms;
+    transition: all 400ms;
     filter: blur(5px);
 }
 
@@ -472,7 +477,7 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 20px;
+
     border-top: #ffffff31 solid 1px;
 }
 footer h2 {
@@ -491,7 +496,7 @@ footer .contact {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px;
+    padding: 0 20px;
     width: 100%;
 }
 footer .media {
@@ -516,6 +521,139 @@ footer .media .media-icon:hover span {
 footer .media .media-icon:hover span {
     color: #ffffff8d;
 }
+
+/* BMI SCREEN  */
+
+body.bmi-body {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+}
+header.bmi-header {
+    margin-bottom: 20px;
+}
+main.bmi-main {
+    flex-direction: column;
+    flex: 2;
+}
+
+.form-content {
+    display: flex;
+    flex: 1.5;
+    border: var(--text-secudary) solid 1px;
+    border-radius: 12px;
+}
+form.bmi-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 10px 20px;
+    gap: 30px;
+}
+form.bmi-form button {
+    margin: 0;
+}
+.bmi-form-input {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.bmi-form-input input {
+    height: 50px;
+    padding-left: 12px;
+    flex: 1;
+    background: var(--background);
+    color: var(--text-primary);
+    border: none;
+    border-bottom: #25ab75 solid 2px;
+    transition: all ease-in-out 150ms;
+}
+label {
+    font-size: 14px;
+}
+label.height {
+    margin-right: 6px;
+}
+
+.bmi-form-input input:focus {
+    border-bottom: #25ab75 solid 5px;
+}
+
+.bmi-btn {
+    width: 124px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all ease-in-out 150ms;
+}
+.bmi-btn:hover {
+    scale: none;
+    background: #25ab75;
+    font-weight: 700;
+}
+.bmi-result {
+    background: #121212;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 24px;
+    border-radius: 0 12px 12px 0;
+}
+
+.bmi-result h4 {
+    font-size: 26px;
+}
+.bmi-result span {
+    font-size: 72px;
+    font-weight: 700;
+}
+.bmi-result p {
+    font-size: 12px;
+}
+section.bmi-results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px 0;
+    gap: 10px;
+}
+.bmi {
+    height: 100px;
+    max-width: 150px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 14px 0;
+    align-items: center;
+    border-radius: 12px;
+    background: var(--background-button);
+}
+.bmi p {
+    color: var(--text-primary);
+    text-align: center;
+    padding: 0 14px;
+}
+.underweight {
+    color: var(--underweight);
+}
+.normal {
+    color: var(--normal);
+}
+.overweight {
+    color: var(--overweight);
+}
+.obese {
+    color: var(--obese);
+}
+
 @media (max-width: 1500px) {
     .container {
         width: 800px;
@@ -568,9 +706,6 @@ footer .media .media-icon:hover span {
     }
     .title-info {
         width: 400px;
-    }
-    footer .contact {
-        justify-content: space-between;
     }
 }
 
@@ -723,12 +858,12 @@ footer .media .media-icon:hover span {
             width: 80vw;
         }
         button {
-            width: 50vw;
+            width: 70vw;
             height: 5vh;
             font-weight: 700;
             font-size: 2vw;
-            margin-top: 3vh;
-            margin-left: 20vw;
+            margin-top: 1vh;
+            margin-left: 10vw;
             margin-bottom: 0;
         }
         .text-section {
@@ -783,6 +918,7 @@ footer .media .media-icon:hover span {
         }
         .workout-program button {
             margin-bottom: 8vh;
+            margin-top: 3vh;
             margin-left: 10vw;
         }
         .grid-img-trainers {
@@ -854,11 +990,60 @@ footer .media .media-icon:hover span {
             width: 4vw;
             margin-right: 2vw;
         }
+        footer .contact {
+            justify-content: space-between;
+            padding: 0 20px;
+        }
         footer .contact .media {
-            height: 80px;
+            height: 90px;
+            border: solid 1;
         }
         footer .contact .media span {
             font-size: 10px;
+        }
+    }
+    .form-content {
+        flex-direction: column;
+        flex: 3;
+    }
+    form.bmi-form {
+        align-items: center;
+    }
+    .bmi-result {
+        border-radius: 0 0 12px 12px;
+    }
+    @media (max-width: 490px) {
+        body.bmi-body {
+            display: flex;
+            flex-direction: column;
+            height: 97vh;
+        }
+        .bmi-form-input input {
+            max-width: 200px;
+        }
+        section.bmi-results h5 {
+            font-size: 10px;
+        }
+        section.bmi-results {
+            font-size: 8px;
+        }
+        .bmi p {
+            padding: 0 20px;
+        }
+        .bmi {
+            height: 60px;
+            padding: 5px 0;
+        }
+        footer {
+            height: 150px;
+            padding: 8px 0;
+        }
+        footer h2 {
+            font-size: 16px;
+        }
+        footer h2 span {
+            padding-bottom: 11px;
+            font-size: 8px;
         }
     }
 }

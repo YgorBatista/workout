@@ -11,6 +11,7 @@ icon.addEventListener('click', () => {
     bar3.classList.toggle('bar-active3');
 });
 
+// efeito de foco ao abrir a pagina
 const elements = document.querySelectorAll('.hidden');
 
 const myObserver = new IntersectionObserver(entry => {
