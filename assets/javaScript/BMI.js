@@ -3,10 +3,9 @@ console.log('BMI test');
 const weight = document.querySelector('#weight');
 const height = document.querySelector('#height');
 const form = document.querySelector('.bmi-form');
-const resultContainer = document.querySelector('.bmi-result');
-const resultTitle = resultContainer.querySelector('h4');
-const resultValue = resultContainer.querySelector('span');
-const resultDescription = resultContainer.querySelector('p');
+const resultTitle = document.querySelector('.bmi-result h4');
+const resultValue = document.querySelector('.bmi-result span');
+const resultDescription = document.querySelector('.bmi-result p');
 
 // deixar o campo peso recebendo apenas numeros
 weight.addEventListener('input', e => {
@@ -96,20 +95,6 @@ function animateBMI(finalValue, description) {
         .fromTo(textEl, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5 }, '-=0.2');
 }
 
-// 🔥 highlight dos cards
-function highlightCard(type) {
-    const cards = document.querySelectorAll('.bmi');
-
-    cards.forEach(card => {
-        card.classList.remove('active');
-    });
-
-    const activeCard = document.querySelector(`.${type}`);
-    if (activeCard) {
-        activeCard.classList.add('active');
-    }
-}
-
 // executa o calculo e animação ao enviar o form
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -123,11 +108,10 @@ form.addEventListener('submit', e => {
     }
 
     const bmi = calculateBMI(weightValue, heightValue);
-
     const { title, description, className } = getBMIStatus(bmi);
 
     resultTitle.textContent = title;
 
     animateBMI(bmi, description);
-    highlightCard(className);
+    Result(className);
 });
