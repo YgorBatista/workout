@@ -108,7 +108,7 @@ form.addEventListener('submit', e => {
     }
 
     const bmi = calculateBMI(weightValue, heightValue);
-    const { title, description, className } = getBMIStatus(bmi);
+    const { title, description } = getBMIStatus(bmi);
 
     resultTitle.textContent = title;
 
