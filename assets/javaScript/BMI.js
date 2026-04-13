@@ -113,5 +113,4 @@ form.addEventListener('submit', e => {
     resultTitle.textContent = title;
 
     animateBMI(bmi, description);
-    Result(className);
 });
